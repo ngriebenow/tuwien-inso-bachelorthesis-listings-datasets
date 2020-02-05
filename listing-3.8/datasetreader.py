@@ -1,3 +1,10 @@
+from typing import Iterator, List, Dict
+from allennlp.data.dataset_readers import DatasetReader
+from allennlp.data import Instance
+from allennlp.data.fields import TextField, SequenceLabelField
+from allennlp.data.token_indexers import TokenIndexer, SingleIdTokenIndexer
+from allennlp.data.tokenizers import Token
+
 @DatasetReader.register('posDatasetReader')
 class PosDatasetReader(DatasetReader):
 	"""

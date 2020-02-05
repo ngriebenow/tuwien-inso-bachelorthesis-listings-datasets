@@ -4,8 +4,8 @@ import re
 from nltk.tag.sequential import ClassifierBasedTagger
 
 corp = nltk.corpus.ConllCorpusReader('.',
-                                    'tiger.conll09',
-                                    ['ignore', 'words', 'ignore', 'ignore', 'pos'],
+                                    ['tiger.conll09'],
+                                    columntypes=['ignore', 'words', 'ignore', 'ignore', 'pos'],
                                      encoding='utf-8')
 
 
@@ -89,8 +89,3 @@ accuracy = tagger.evaluate(test_sents)
 print(accuracy)
 
 print(tagger.tag(['Der', 'Charakter', 'ruht', 'auf', 'der', 'Persönlichkeit', 'nicht', 'auf', 'den', 'Talenten']))
-
-import pickle
-
-with open('nltk_german_classifier_data.pickle', 'wb') as f:
-    pickle.dump(tagger, f, protocol=2)

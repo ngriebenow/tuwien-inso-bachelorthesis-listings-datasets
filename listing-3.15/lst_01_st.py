@@ -7,7 +7,7 @@ train_df = pd.DataFrame(train_data)
 eval_data = [["Raupenfahrzeug fuer Baustelleneinsatz", 1], ["Dialysegeraet fuer Medizinische Universitaet Wien", 0]]
 eval_df = pd.DataFrame(eval_data)
 
-model = ClassificationModel("bert", "bert-base-german-uncased")
+model = ClassificationModel("bert", "bert-base-german-cased", use_cuda=False)
 
 model.train_model(train_df)
 
